@@ -4,7 +4,7 @@ const Paragraph = document.getElementById('Paragraph');
 const Second_Title = document.getElementById('Second_Title');
 const submitBtn = document.getElementById('submitBtn');
 
-fetch('highfieldtherapy.co.uk/info.json')
+fetch('http://highfieldtherapy.co.uk/info.json')
     .then(response => response.json())
     .then(data => {
         Title.textContent = data.Title;
