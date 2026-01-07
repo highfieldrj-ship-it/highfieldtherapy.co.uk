@@ -1,46 +1,51 @@
-@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&family=Stack+Sans+Text:wght@200..700&display=swap');
-body {
-    font-family: Arial, sans-serif;
-	margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Raleway:wght@100..900&family=Source+Code+Pro:wght@200..900&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; }
+
+body{
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+
+  background: url('https://images.unsplash.com/photo-1503435980610-a51f3ddfee50?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')
+    center / cover no-repeat fixed;
+
+  display: grid;
+  place-items: center;
 }
-.Frame {
-    padding: 20px;
-    margin: 20px;
-    text-align: center;
-    background-color: rgba(5, 2, 2, 0.482);
-    border-radius: 10px;
-    margin: 20vh auto;
-    width: 40vh;
-    height: 40vh;
-    font-family: 'Libre Baskerville', serif;
-    color: white;
-    min-width: 300px;
-    min-height: 400px;
+
+.Frame{
+  padding: 20px;
+  text-align: center;
+  background-color: rgba(5, 2, 2, 0.482);
+  border-radius: 10px;
+
+  width: min(92vw, 420px);
+  min-height: 400px;
+
+  font-family: 'Libre Baskerville', serif;
+  color: white;
 }
-html {
-    background: url('https://images.unsplash.com/photo-1503435980610-a51f3ddfee50?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') no-repeat center center fixed;
-    background-size: cover;
-    height: 100%;
+
+#Paragraph{
+  font-family: 'Raleway', sans-serif;
+  font-size: 1.2em;
+  line-height: 1.5em;
+  margin-top: 15px;
 }
-#text {
-    font-family: 'Raleway', sans-serif;
-    font-size: 1.2em;
-    line-height: 1.5em;
-    margin-top: 15px;
+
+#submitBtn{
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 0.8em;
+  font-family: 'Source Code Pro', monospace;
+  background-color: transparent;
+  color: aliceblue;
+  border: 1px solid white;
+  cursor: pointer;
 }
-#submitBtn {
-    margin-top: 20px;
-    padding: 10px 20px;
-    font-size: 0.8em;
-    font-family: 'Source Code Pro', monospace;
-    background-color: #efeded00;
-    color: aliceblue;
-    border: 1px solid white;
-    cursor: pointer;
-}
-#submitBtn:hover {
-    background-color: #d9d5d5dc;
-    color: black;
+#submitBtn:hover{
+  background-color: #d9d5d5dc;
+  color: black;
 }
