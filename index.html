@@ -19,14 +19,24 @@
   /* Profile photo */
   .profile-photo { display: block; margin: 0 auto 20px; width: 180px; height: 180px; object-fit: cover; border-radius: 50%; }
 
-  /* The four new sections, styled to match the existing card look */
+  /* Hero and content use more of the screen on wider displays */
+  .Frame { width: min(94vw, 900px); }
+
+  .sections {
+    width: min(94vw, 900px);
+    margin: 20px auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
   .section {
+    width: auto;
+    margin: 0;
     padding: 30px 20px;
-    margin: 20px 0;
     text-align: center;
     background-color: rgba(5,2,2,0.482);
     border-radius: 10px;
-    width: min(92vw, 420px);
     font-family: 'Libre Baskerville', serif;
     color: white;
     scroll-margin-top: 20px;
@@ -37,6 +47,11 @@
     font-size: 1em;
     line-height: 1.6em;
     margin: 0;
+  }
+
+  /* Show the four sections two-across once there's enough room */
+  @media (min-width: 720px) {
+    .sections { grid-template-columns: 1fr 1fr; }
   }
 </style>
 
@@ -57,27 +72,29 @@
     <p id="Welcome"></p>
 </div>
 
-<section id="about" class="section">
-    <h2>About Me</h2>
-    <p id="aboutText"></p>
-</section>
+<div class="sections">
+  <section id="about" class="section">
+      <h2>About Me</h2>
+      <p id="aboutText"></p>
+  </section>
 
-<section id="therapy" class="section">
-    <h2>Types of Therapy</h2>
-    <p id="therapyText"></p>
-</section>
+  <section id="therapy" class="section">
+      <h2>Types of Therapy</h2>
+      <p id="therapyText"></p>
+  </section>
 
-<section id="fees" class="section">
-    <h2>Fees &amp; Booking</h2>
-    <p id="feesText"></p>
-</section>
+  <section id="fees" class="section">
+      <h2>Fees &amp; Booking</h2>
+      <p id="feesText"></p>
+  </section>
 
-<section id="contact" class="section">
-    <h2>Contact</h2>
-    <p id="contactText"></p>
-    <h5 id="Email"></h5>
-    <button id="submitBtn">Contact Us</button>
-</section>
+  <section id="contact" class="section">
+      <h2>Contact</h2>
+      <p id="contactText"></p>
+      <h5 id="Email"></h5>
+      <button id="submitBtn">Contact Us</button>
+  </section>
+</div>
 
     <script src="script.js"></script>
 </body>
