@@ -19,22 +19,16 @@
   /* Profile photo */
   .profile-photo { display: block; margin: 0 auto 20px; width: 180px; height: 180px; object-fit: cover; border-radius: 50%; }
 
-  /* Hero and content use more of the screen on wider displays */
   .Frame { width: min(94vw, 900px); }
 
-  .sections {
-    width: min(94vw, 900px);
-    margin: 20px auto;
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 20px;
-    align-items: start;
-  }
+  /* Full-width content bands (About, Types of Therapy) */
+  .band { width: min(94vw, 900px); margin: 0 auto 20px; }
+
+  /* The short pair (Fees, Contact) sit side by side on wider screens */
+  .pair { width: min(94vw, 900px); margin: 0 auto 20px; display: grid; grid-template-columns: 1fr; gap: 20px; }
 
   .section {
-    width: auto;
-    margin: 0;
-    padding: 30px 20px;
+    padding: 30px 24px;
     text-align: center;
     background-color: rgba(5,2,2,0.482);
     border-radius: 10px;
@@ -47,19 +41,21 @@
     font-family: 'Raleway', sans-serif;
     font-size: 1em;
     line-height: 1.6em;
-    margin: 0;
+    margin: 0 auto;
+    max-width: 640px;
   }
 
   /* "I can help with" list inside Types of Therapy */
-  .help-list { text-align: left; max-width: 520px; margin: 18px auto 0; }
-  .help-list .lead { text-align: center; margin: 0 0 12px; }
-  .help-list h3 { font-family: 'Libre Baskerville', serif; font-weight: normal; font-size: 1.1em; margin: 16px 0 6px; }
-  .help-list ul { margin: 0; padding-left: 20px; font-family: 'Raleway', sans-serif; line-height: 1.6em; }
-  .help-list li { margin: 2px 0; }
+  .help-list { max-width: 780px; margin: 20px auto 0; text-align: left; }
+  .help-list .lead { text-align: center; max-width: 640px; margin: 0 auto 14px; }
+  .help-groups { display: grid; grid-template-columns: 1fr; gap: 0 28px; }
+  .help-group h3 { font-family: 'Libre Baskerville', serif; font-weight: normal; font-size: 1.1em; margin: 14px 0 6px; }
+  .help-group ul { margin: 0; padding-left: 20px; font-family: 'Raleway', sans-serif; line-height: 1.6em; }
+  .help-group li { margin: 2px 0; }
 
-  /* Show the four sections two-across once there's enough room */
-  @media (min-width: 720px) {
-    .sections { grid-template-columns: 1fr 1fr; }
+  @media (min-width: 700px) {
+    .pair { grid-template-columns: 1fr 1fr; }
+    .help-groups { grid-template-columns: 1fr 1fr; }
   }
 </style>
 
@@ -75,61 +71,77 @@
 </nav>
 
 <div class="Frame">
-    <img src="Profilephoto.JPG" alt="Robert, humanistic therapist" class="profile-photo">
+    <img src="Profilephoto.JPG" alt="Robert, integrative psychotherapist" class="profile-photo">
     <h1 id="Title"></h1>
     <p id="Welcome"></p>
 </div>
 
-<div class="sections">
+<div class="band">
   <section id="about" class="section">
-      <h2>About Me</h2>
-      <p id="aboutText"></p>
+    <h2>About Me</h2>
+    <p id="aboutText"></p>
   </section>
+</div>
 
+<div class="band">
   <section id="therapy" class="section">
-      <h2>Types of Therapy</h2>
-      <p id="therapyText"></p>
-      <div class="help-list">
-        <p class="lead">I can help with a range of issues, including:</p>
-        <h3>Mood and anxiety</h3>
-        <ul>
-          <li>Anxiety, worry and panic</li>
-          <li>Low mood and depression</li>
-          <li>Stress and burnout</li>
-        </ul>
-        <h3>Loss, trauma and difficult experiences</h3>
-        <ul>
-          <li>Grief, bereavement and loss</li>
-          <li>Trauma, including the after-effects of abuse or exploitation</li>
-          <li>Feeling overwhelmed, low or hopeless</li>
-        </ul>
-        <h3>Sense of self and relationships</h3>
-        <ul>
-          <li>Low self-esteem and confidence</li>
-          <li>Relationship difficulties (working with you as an individual)</li>
-          <li>Loneliness and isolation</li>
-          <li>Anger and other difficult emotions</li>
-          <li>Patterns from childhood or the past that affect you now</li>
-        </ul>
-        <h3>Life, work and direction</h3>
-        <ul>
-          <li>Significant life changes and transitions</li>
-          <li>Work, career or study-related pressures</li>
-          <li>Questions of identity, meaning and purpose</li>
-        </ul>
+    <h2>Types of Therapy</h2>
+    <p id="therapyText"></p>
+    <div class="help-list">
+      <p class="lead">I can help with a range of issues, including:</p>
+      <div class="help-groups">
+        <div class="help-group">
+          <h3>Mood and anxiety</h3>
+          <ul>
+            <li>Anxiety, worry and panic</li>
+            <li>Low mood and depression</li>
+            <li>Stress and burnout</li>
+            <li>Emotional numbness or feeling disconnected</li>
+          </ul>
+        </div>
+        <div class="help-group">
+          <h3>Loss, trauma and difficult experiences</h3>
+          <ul>
+            <li>Grief, bereavement and loss</li>
+            <li>Trauma, including the after-effects of abuse or exploitation</li>
+            <li>The lasting impact of adverse childhood experiences (ACEs)</li>
+            <li>Feeling overwhelmed, low or hopeless</li>
+          </ul>
+        </div>
+        <div class="help-group">
+          <h3>Sense of self and relationships</h3>
+          <ul>
+            <li>Low self-esteem and confidence</li>
+            <li>Difficulty with trust, intimacy and secure relationships</li>
+            <li>Relationship difficulties (working with you as an individual)</li>
+            <li>Loneliness and isolation</li>
+            <li>Anger and other difficult emotions</li>
+            <li>Patterns from childhood or the past that affect you now</li>
+          </ul>
+        </div>
+        <div class="help-group">
+          <h3>Life, work and direction</h3>
+          <ul>
+            <li>Significant life changes and transitions</li>
+            <li>Work, career or study-related pressures</li>
+            <li>Questions of identity, meaning and purpose</li>
+          </ul>
+        </div>
       </div>
+    </div>
   </section>
+</div>
 
+<div class="pair">
   <section id="fees" class="section">
-      <h2>Fees &amp; Booking</h2>
-      <p id="feesText"></p>
+    <h2>Fees &amp; Booking</h2>
+    <p id="feesText"></p>
   </section>
-
   <section id="contact" class="section">
-      <h2>Contact</h2>
-      <p id="contactText"></p>
-      <h5 id="Email"></h5>
-      <button id="submitBtn">Contact Us</button>
+    <h2>Contact</h2>
+    <p id="contactText"></p>
+    <h5 id="Email"></h5>
+    <button id="submitBtn">Contact Us</button>
   </section>
 </div>
 
