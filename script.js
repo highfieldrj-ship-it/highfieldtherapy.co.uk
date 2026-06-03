@@ -1,17 +1,18 @@
-const Title = document.getElementById('Title');
-const Email = document.getElementById('Email');
-const Paragraph = document.getElementById('Paragraph');
-const Second_Title = document.getElementById('Second_Title');
-const submitBtn = document.getElementById('submitBtn');
-
 fetch('./info.json')
     .then(response => response.json())
     .then(data => {
-        Title.textContent = data.Title;
-        Email.textContent = data.Email;
-        Paragraph.textContent = data.Paragraph;
-        Second_Title.textContent = data.Second_Title;
+        document.getElementById('Title').textContent = data.Title;
+        document.getElementById('Welcome').textContent = data.Welcome;
+        document.getElementById('aboutText').textContent = data.About;
+        document.getElementById('therapyText').textContent = data.Therapy;
+        document.getElementById('feesText').textContent = data.Fees;
+        document.getElementById('contactText').textContent = data.Contact;
+        document.getElementById('Email').textContent = data.Email;
+
+        const submitBtn = document.getElementById('submitBtn');
         submitBtn.textContent = data.submitBtn;
+        submitBtn.addEventListener('click', () => {
+            window.location.href = 'mailto:' + data.Email;
+        });
     })
     .catch(error => console.error('Error loading JSON:', error));
-
