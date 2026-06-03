@@ -1,57 +1,84 @@
-
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Page</title>
+    <title>Highfield Therapy</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <style>
-  /* Hide the invisible checkbox */
+  /* Hamburger menu (unchanged) */
   #menu-toggle { display: none; }
-  
-  /* Hide the menu links by default */
   .nav-links { display: none; list-style-type: none; padding: 0; margin: 0; background-color: #f9f9f9; }
-  
-  /* Show the links ONLY when the hamburger is clicked */
   #menu-toggle:checked + .nav-links { display: block; }
-  
-  /* Make the 3 lines look like a clickable button */
   .hamburger { font-size: 28px; cursor: pointer; display: block; padding: 15px; background: #eaeaea; }
-  
-  /* Make the links look nice */
   .nav-links li a { display: block; padding: 15px; text-decoration: none; color: #333; border-bottom: 1px solid #ddd; }
   .nav-links li a:hover { background-color: #ddd; }
+
+  /* Profile photo */
+  .profile-photo { display: block; margin: 0 auto 20px; width: 180px; height: 180px; object-fit: cover; border-radius: 50%; }
+
+  /* The four new sections, styled to match the existing card look */
+  .section {
+    padding: 30px 20px;
+    margin: 20px 0;
+    text-align: center;
+    background-color: rgba(5,2,2,0.482);
+    border-radius: 10px;
+    width: min(92vw, 420px);
+    font-family: 'Libre Baskerville', serif;
+    color: white;
+    scroll-margin-top: 20px;
+  }
+  .section h2 { font-size: 1.5em; margin: 0 0 15px 0; }
+  .section p {
+    font-family: 'Raleway', sans-serif;
+    font-size: 1em;
+    line-height: 1.6em;
+    margin: 0;
+  }
 </style>
 
 <nav>
   <label for="menu-toggle" class="hamburger">&#9776; Menu</label>
   <input type="checkbox" id="menu-toggle">
-  
   <ul class="nav-links">
     <li><a href="#about">About Me</a></li>
     <li><a href="#therapy">Types of Therapy</a></li>
-    <li><a href="#fees">Fees & Booking</a></li>
+    <li><a href="#fees">Fees &amp; Booking</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
 </nav>
-    <div class="Frame"
-    >
-<img src="Profilephoto.JPG" alt="Robert, humanistic therapist" style="display:block; margin:20px auto; width:180px; height:180px; object-fit:cover; border-radius:50%;">
-        <h1 id="Title"></h1>
-        <h5 id="Email"></h5>
-        <p id="Paragraph">
-        </p>
-            <h5 id="Second_Title">
-        
-            </h5>
-            <div>
-                <button
-                id="submitBtn">Contact Us</button>
-            </div>
-    </div>
+
+<div class="Frame">
+    <img src="Profilephoto.JPG" alt="Robert, humanistic therapist" class="profile-photo">
+    <h1 id="Title"></h1>
+    <p id="Welcome"></p>
+</div>
+
+<section id="about" class="section">
+    <h2>About Me</h2>
+    <p id="aboutText"></p>
+</section>
+
+<section id="therapy" class="section">
+    <h2>Types of Therapy</h2>
+    <p id="therapyText"></p>
+</section>
+
+<section id="fees" class="section">
+    <h2>Fees &amp; Booking</h2>
+    <p id="feesText"></p>
+</section>
+
+<section id="contact" class="section">
+    <h2>Contact</h2>
+    <p id="contactText"></p>
+    <h5 id="Email"></h5>
+    <button id="submitBtn">Contact Us</button>
+</section>
+
     <script src="script.js"></script>
 </body>
 </html>
