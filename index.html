@@ -21,10 +21,10 @@
 
   .Frame { width: min(94vw, 900px); }
 
-  /* Full-width content bands (About, Types of Therapy) */
+  /* Full-width content bands */
   .band { width: min(94vw, 900px); margin: 0 auto 20px; }
 
-  /* The short pair (Fees, Contact) sit side by side on wider screens */
+  /* Fees and Contact side by side on wider screens */
   .pair { width: min(94vw, 900px); margin: 0 auto 20px; display: grid; grid-template-columns: 1fr; gap: 20px; }
 
   .section {
@@ -41,21 +41,27 @@
     font-family: 'Raleway', sans-serif;
     font-size: 1em;
     line-height: 1.6em;
-    margin: 0 auto;
+    margin: 0 auto 14px;
     max-width: 640px;
   }
+  .section p:last-of-type { margin-bottom: 0; }
 
-  /* "I can help with" list inside Types of Therapy */
-  .help-list { max-width: 780px; margin: 20px auto 0; text-align: left; }
-  .help-list .lead { text-align: center; max-width: 640px; margin: 0 auto 14px; }
-  .help-groups { display: grid; grid-template-columns: 1fr; gap: 0 28px; }
-  .help-group h3 { font-family: 'Libre Baskerville', serif; font-weight: normal; font-size: 1.1em; margin: 14px 0 6px; }
-  .help-group ul { margin: 0; padding-left: 20px; font-family: 'Raleway', sans-serif; line-height: 1.6em; }
-  .help-group li { margin: 2px 0; }
+  /* Call-to-action link, styled like the Contact button */
+  .cta {
+    display: inline-block;
+    margin-top: 22px;
+    padding: 10px 20px;
+    font-size: 0.9em;
+    font-family: 'Source Code Pro', monospace;
+    background-color: transparent;
+    color: aliceblue;
+    border: 1px solid white;
+    text-decoration: none;
+  }
+  .cta:hover { background-color: #d9d5d5dc; color: black; }
 
   @media (min-width: 700px) {
     .pair { grid-template-columns: 1fr 1fr; }
-    .help-groups { grid-template-columns: 1fr 1fr; }
   }
 </style>
 
@@ -77,6 +83,17 @@
 </div>
 
 <div class="band">
+  <section id="intro" class="section">
+    <h2>Does this sound familiar?</h2>
+    <p id="situationText"></p>
+    <p id="problemText"></p>
+    <p id="implicationText"></p>
+    <p id="payoffText"></p>
+    <a href="#fees" class="cta" id="ctaBtn"></a>
+  </section>
+</div>
+
+<div class="band">
   <section id="about" class="section">
     <h2>About Me</h2>
     <p id="aboutText"></p>
@@ -87,48 +104,6 @@
   <section id="therapy" class="section">
     <h2>Types of Therapy</h2>
     <p id="therapyText"></p>
-    <div class="help-list">
-      <p class="lead">I can help with a range of issues, including:</p>
-      <div class="help-groups">
-        <div class="help-group">
-          <h3>Mood and anxiety</h3>
-          <ul>
-            <li>Anxiety, worry and panic</li>
-            <li>Low mood and depression</li>
-            <li>Stress and burnout</li>
-            <li>Emotional numbness or feeling disconnected</li>
-          </ul>
-        </div>
-        <div class="help-group">
-          <h3>Loss, trauma and difficult experiences</h3>
-          <ul>
-            <li>Grief, bereavement and loss</li>
-            <li>Trauma, including the after-effects of abuse or exploitation</li>
-            <li>The lasting impact of adverse childhood experiences (ACEs)</li>
-            <li>Feeling overwhelmed, low or hopeless</li>
-          </ul>
-        </div>
-        <div class="help-group">
-          <h3>Sense of self and relationships</h3>
-          <ul>
-            <li>Low self-esteem and confidence</li>
-            <li>Difficulty with trust, intimacy and secure relationships</li>
-            <li>Relationship difficulties (working with you as an individual)</li>
-            <li>Loneliness and isolation</li>
-            <li>Anger and other difficult emotions</li>
-            <li>Patterns from childhood or the past that affect you now</li>
-          </ul>
-        </div>
-        <div class="help-group">
-          <h3>Life, work and direction</h3>
-          <ul>
-            <li>Significant life changes and transitions</li>
-            <li>Work, career or study-related pressures</li>
-            <li>Questions of identity, meaning and purpose</li>
-          </ul>
-        </div>
-      </div>
-    </div>
   </section>
 </div>
 
