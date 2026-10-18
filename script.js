@@ -16,10 +16,12 @@ fetch('./info.json')
             Email: 'Email'
         };
 
-        for (const id in slots) {
+                for (const id in slots) {
             const el = document.getElementById(id);
             if (el) el.textContent = data[slots[id]];
         }
+        const title = document.getElementById('Title');
+        if (title) title.innerHTML = data.Title + '<span class="visually-hidden"> - Counselling in Sheffield &amp; Online</span>';
 
         const submitBtn = document.getElementById('submitBtn');
         submitBtn.textContent = data.submitBtn;
