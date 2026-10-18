@@ -42,7 +42,8 @@
   /* Profile photo */
   .profile-photo { display: block; margin: 0 auto 20px; width: 180px; height: 180px; object-fit: cover; border-radius: 50%; }
 
-  .Frame { width: min(94vw, 900px); }
+    .visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+        .Frame { width: min(94vw, 900px); }
 
   /* Full-width content bands */
   .band { width: min(94vw, 900px); margin: 0 auto 20px; }
@@ -101,7 +102,7 @@
 
 <div class="Frame">
     <img src="Profilephoto.JPG" alt="Robert Highfield, counsellor in Sheffield" class="profile-photo">
-    <h1 id="Title">Highfield Therapy<span class="visually-hidden"> - Counselling in Sheffield &amp; Online</span></h1>
+        <h1 id="Title">Highfield Therapy<span class="visually-hidden"> - Counselling in Sheffield &amp; Online</span></h1>
     <p id="Welcome">Welcome to Highfield Therapy. A warm, confidential space for adults who want to understand old patterns and feel more secure in themselves and their relationships, online or in person in Sheffield. Robert Highfield, MNCPS (Accred).</p>
 </div>
 
