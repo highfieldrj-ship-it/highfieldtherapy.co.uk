@@ -87,6 +87,11 @@
   .room-photos { display: grid; grid-template-columns: 1fr; gap: 12px; margin: 22px auto 0; max-width: 780px; }
   .room-photos img { width: 100%; height: 260px; object-fit: cover; border-radius: 8px; display: block; }
 
+  /* Membership logos in the footer, on a light panel so they stay clear */
+  .site-footer { width: min(94vw, 900px); margin: 0 auto 30px; text-align: center; }
+  .logo-panel { display: inline-block; background: rgba(255,255,255,0.93); border-radius: 10px; padding: 14px 22px; }
+  .logo-panel img { display: block; width: 100%; max-width: 240px; height: auto; }
+
   @media (min-width: 700px) {
     .pair { grid-template-columns: 1fr 1fr; }
     .room-photos { grid-template-columns: 1fr 1fr; }
@@ -153,6 +158,12 @@
     <button id="submitBtn">Contact Us</button>
   </section>
 </div>
+
+<footer class="site-footer">
+  <div class="logo-panel">
+    <img src="ncpsaccreg.png" alt="NCPS Individual Accredited Registrant logo">
+  </div>
+</footer>
 
     <script src="script.js"></script>
 </body>
