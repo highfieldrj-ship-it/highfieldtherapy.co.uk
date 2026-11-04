@@ -42,12 +42,15 @@
   .nav-links li a:hover { background-color: #ddd; }
 
   /* Brand logo above the profile photo */
-  .brand-logo { display: block; margin: 0 auto 14px; width: 70px; height: 70px; }
+  .brand-logo { position: absolute; top: 14px; left: 14px; width: 52px; height: 52px; }
+  @media (min-width: 700px) {
+    .brand-logo { top: 20px; left: 24px; width: 84px; height: 84px; }
+  }
 
   /* Profile photo */
   .profile-photo { display: block; margin: 0 auto 20px; width: 180px; height: 180px; object-fit: cover; border-radius: 50%; }
 
-  .Frame { width: min(94vw, 900px); }
+  .Frame { width: min(94vw, 900px); position: relative; }
 
   /* Full-width content bands */
   .band { width: min(94vw, 900px); margin: 0 auto 20px; }
